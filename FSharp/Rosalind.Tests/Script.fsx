@@ -7,22 +7,22 @@ System.IO.Directory.SetCurrentDirectory (__SOURCE_DIRECTORY__)
 #r @"FsCheck.dll"
 #r @"FsCheck.XUnit.dll"
 #r @"xunit.dll"
-#r @"Euler.dll"
+#r @"Rosalind.dll"
 
 open FsCheck
-open Euler.Problems
+open Rosalind.``Bioinformatics Stronghlod``
 
-let rec divisors acc number =
-    let count, indx = acc
-    if pown indx 2 <= number then
-        if number % indx = 0L then
-            divisors (count + 2L, indx + 1L) number
-        else
-            divisors (count, indx + 1L) number
-    else
-        count
-
-Seq.unfold (fun (a, state) -> Some(a, (a + state, state + 1L))) (1L, 2L)
-    |> Seq.skipWhile (fun elem -> divisors (2L, 2L) elem < 500L)
-    |> Seq.take 1
-    |> Seq.max
+let result = dna "CCCGCCTTCTCTTCGCTTGAGAGTGCGTCGGTTCGGCGGCATTTACGGAGCCACAGCCACAACCC\
+                          ACCCTACATCGTAGGTAGTTTAAGGCCAGTCCCTAATGCGTTCGGGGTAGAGTAAGCGAGTCCCT\
+                          TCGAGGACCCAAGCTTTTTTCGATGAAACGCGCTTGTATTCTAGTGCTCGCCCGACTACAAGGAG\
+                          CCATCGACGTAGGCCGTTAACAAACCTAGATTCTCAGCTGTTTCGTGGAGGACCGCGCAGAAGCT\
+                          CCGGATACGCGTTTCGACACGGTAGCCCCCCCGTCTGTGATAGCAGCGAAGAGATTCTTCACAAC\
+                          GGTGCGGACTCGAGGGATTCCCTAGTAAGCCTTCGCCCGATCGGGCTACTTACATTCCCTCGCGC\
+                          TACTCTCGTAGGGCCAGGTAGGCCAACGCGTTCCGGTACCCGTTTAGTTCTTGTGGGGATCATGG\
+                          GAGAGGTATAGTTGCTCGGGCGGGGTGAGCATCGCAGACTCGTTTTTCACTGCGCTCGCGCATCT\
+                          GCCACGAGGACATTCGATCATGTGGCGACGTGATCCCTCTTCAGACCTTATCTTGGAGGGCGCAG\
+                          CCGTCCGTTCCACCCGAATGTCCGCGGTTTTGGCGACACTGGTAACCTTAGCAGTCAGTACGCGT\
+                          AATAGCGACGGGCCCAAGGCTGCGCGTCCACTCGATTGTAGTGCTTCAGGACCTAGCGCTGCTGA\
+                          GATAATGGATACAGTAGGCGAAATCGTGATAGTTGCTATGCCGGCCGTAATCAGAACAAACTAAT\
+                          GTCGCCAATACTCCACGGCGCACCTATTGACCACGTTTCTTTCCCCATCCCTTTAAATTCCCGCT\
+                          GTCCCGGGCATCGGAATAGGAAGGGACTGAGTACTAGAGAGTCCTGCTGGGTC"
