@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Rosalind", "Rosalind\Rosalind.fsproj", "{38FB144F-561E-4FC1-818E-1B779D909835}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Rosalind.Tests", "Rosalind.Tests\Rosalind.Tests.fsproj", "{EE480465-163F-408C-BC32-586B7BFCFC4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38FB144F-561E-4FC1-818E-1B779D909835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38FB144F-561E-4FC1-818E-1B779D909835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38FB144F-561E-4FC1-818E-1B779D909835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38FB144F-561E-4FC1-818E-1B779D909835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE480465-163F-408C-BC32-586B7BFCFC4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE480465-163F-408C-BC32-586B7BFCFC4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE480465-163F-408C-BC32-586B7BFCFC4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE480465-163F-408C-BC32-586B7BFCFC4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
