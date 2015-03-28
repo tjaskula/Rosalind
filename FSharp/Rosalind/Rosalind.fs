@@ -29,3 +29,10 @@ module ``Bioinformatics Stronghlod`` =
         |> Seq.sortBy (fun (key, _) -> key)
         |> Seq.map (fun (_, count) -> count)
         |> Seq.toList
+
+    // 3
+    let dna'' (rawDna : string) =
+        rawDna
+        |> Seq.groupBy (fun e -> e)
+        |> Seq.map (fun (e, elems) -> e, Seq.length elems)
+        |> Seq.toList

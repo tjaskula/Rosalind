@@ -31,3 +31,8 @@ module ``Bioinformatics Stronghlod tests`` =
     let ``DNA' : Counting DNA Nucleotides``() =
         let result = dna' rawDna = [185; 256; 245; 212]
         Check.Quick result
+
+    [<Fact>]
+    let ``DNA'' : Counting DNA Nucleotides``() =
+        let result = dna'' rawDna = [('C', 256); ('G', 245); ('T', 212); ('A', 185)]
+        Check.Quick result
