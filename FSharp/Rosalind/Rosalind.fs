@@ -1,7 +1,5 @@
 ﻿namespace Rosalind
 
-open System
-
 [<AutoOpen>]
 module ``Bioinformatics Stronghlod`` =
 
@@ -49,3 +47,42 @@ module ``Bioinformatics Armory`` =
         |> Seq.sortBy (fun (key, _) -> key)
         |> Seq.map (fun (_, count) -> string count)
         |> Seq.reduce (fun  acc elem -> acc + " " + elem)
+
+[<AutoOpen>]
+module ``Bioinformatics Textbook Track`` =
+
+    open System.Text.RegularExpressions
+
+    (*
+        1A : Frequent Words Problem
+    *)
+    
+    let patternize size (d : string) =
+        seq {for i in 0..d.Length - size do
+                yield d.Substring(i, size)}
+                    |> Seq.distinct
+ 
+    let countMatches d p =
+        Regex.Matches(d, @"(?<=" + p + ")").Count
+ 
+    let matches data p = 
+                p
+                |> List.ofSeq
+                |> List.map (fun p -> p, countMatches data p)
+                |> List.sortBy (fun (_, count) -> count * -1)
+ 
+    let max m = 
+            m
+            |> List.head
+            |> snd
+ 
+    let mostFrequent size (data : string) =
+        let matched = data
+                        |> patternize size
+                        |> matches data
+        let m = matched |> max
+
+        matched
+            |> List.filter (fun (_, count) -> count = m)
+            |> List.map (fun m -> fst m)
+            |> List.reduce (fun acc el -> sprintf "%s %s" acc el)
