@@ -86,3 +86,16 @@ module ``Bioinformatics Textbook Track`` =
             |> List.filter (fun (_, count) -> count = m)
             |> List.map (fun m -> fst m)
             |> List.reduce (fun acc el -> sprintf "%s %s" acc el)
+
+[<AutoOpen>]
+module ``Algorithmic Heights`` =
+    
+    (*
+        FIBO : Fibonacci Numbers
+    *)
+
+    let rec fibo n =
+        match n with
+            | 0 -> 0
+            | 1 -> 1
+            | _ -> fibo(n - 1) + fibo(n - 2)

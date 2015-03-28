@@ -76,3 +76,10 @@ module ``Bioinformatics Textbook Track tests`` =
     let ``1A : Frequent Words Problem``() =
         let result = mostFrequent 13 data = "GTCTTCCACATCT"
         Check.Quick result
+
+module ``Algorithmic Heights tests`` =
+    
+    [<Fact>]
+    let ``FIBO : Fibonacci Numbers``() =
+        let result = fibo 20 = 6765
+        Check.Quick result
