@@ -36,3 +36,16 @@ module ``Bioinformatics Stronghlod`` =
         |> Seq.groupBy (fun e -> e)
         |> Seq.map (fun (e, elems) -> e, Seq.length elems)
         |> Seq.toList
+
+[<AutoOpen>]
+module ``Bioinformatics Armory`` =
+
+    (*
+        INI : Introduction to the Bioinformatics Armory
+    *)
+    let ini (rawDna : string) =
+        rawDna
+        |> Seq.countBy (fun key -> key)
+        |> Seq.sortBy (fun (key, _) -> key)
+        |> Seq.map (fun (_, count) -> string count)
+        |> Seq.reduce (fun  acc elem -> acc + " " + elem)
