@@ -21,3 +21,11 @@ module ``Bioinformatics Stronghlod`` =
     let dna (rawDna : string) =
         rawDna.ToCharArray()
            |> Array.fold (fun count elem -> countACGT count elem) (0, 0, 0, 0)
+
+    // 2
+    let dna' (rawDna : string) =
+        rawDna
+        |> Seq.countBy (fun key -> key)
+        |> Seq.sortBy (fun (key, _) -> key)
+        |> Seq.map (fun (_, count) -> count)
+        |> Seq.toList

@@ -7,9 +7,7 @@ open Rosalind
 module ``Bioinformatics Stronghlod tests`` =
  
     // DNA : Counting DNA Nucleotides
-    [<Fact>]
-    let ``DNA : Counting DNA Nucleotides``() =
-        let result = dna "CCCGCCTTCTCTTCGCTTGAGAGTGCGTCGGTTCGGCGGCATTTACGGAGCCACAGCCACAACCC\
+    let rawDna = "CCCGCCTTCTCTTCGCTTGAGAGTGCGTCGGTTCGGCGGCATTTACGGAGCCACAGCCACAACCC\
                           ACCCTACATCGTAGGTAGTTTAAGGCCAGTCCCTAATGCGTTCGGGGTAGAGTAAGCGAGTCCCT\
                           TCGAGGACCCAAGCTTTTTTCGATGAAACGCGCTTGTATTCTAGTGCTCGCCCGACTACAAGGAG\
                           CCATCGACGTAGGCCGTTAACAAACCTAGATTCTCAGCTGTTTCGTGGAGGACCGCGCAGAAGCT\
@@ -22,5 +20,14 @@ module ``Bioinformatics Stronghlod tests`` =
                           AATAGCGACGGGCCCAAGGCTGCGCGTCCACTCGATTGTAGTGCTTCAGGACCTAGCGCTGCTGA\
                           GATAATGGATACAGTAGGCGAAATCGTGATAGTTGCTATGCCGGCCGTAATCAGAACAAACTAAT\
                           GTCGCCAATACTCCACGGCGCACCTATTGACCACGTTTCTTTCCCCATCCCTTTAAATTCCCGCT\
-                          GTCCCGGGCATCGGAATAGGAAGGGACTGAGTACTAGAGAGTCCTGCTGGGTC" = (185, 256, 245, 212)
+                          GTCCCGGGCATCGGAATAGGAAGGGACTGAGTACTAGAGAGTCCTGCTGGGTC"
+ 
+    [<Fact>]
+    let ``DNA : Counting DNA Nucleotides``() =
+        let result = dna rawDna = (185, 256, 245, 212)
+        Check.Quick result
+
+    [<Fact>]
+    let ``DNA' : Counting DNA Nucleotides``() =
+        let result = dna' rawDna = [185; 256; 245; 212]
         Check.Quick result
