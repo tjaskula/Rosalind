@@ -35,6 +35,15 @@ module ``Bioinformatics Stronghlod`` =
         |> Seq.map (fun (e, elems) -> e, Seq.length elems)
         |> Seq.toList
 
+    (*
+        RNA : Transcribing DNA into RNA
+    *)
+
+    let transformToRna s =
+        s 
+        |> Seq.map (fun c -> if c = 'T' then "U" else string c)
+        |> Seq.reduce (+)
+
 [<AutoOpen>]
 module ``Bioinformatics Armory`` =
 
