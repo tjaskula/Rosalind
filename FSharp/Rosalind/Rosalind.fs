@@ -47,6 +47,10 @@ module ``Bioinformatics Stronghlod`` =
 [<AutoOpen>]
 module ``Bioinformatics Armory`` =
 
+    open System
+    open System.IO
+    open System.Text.RegularExpressions
+
     (*
         INI : Introduction to the Bioinformatics Armory
     *)
@@ -56,6 +60,26 @@ module ``Bioinformatics Armory`` =
         |> Seq.sortBy (fun (key, _) -> key)
         |> Seq.map (fun (_, count) -> string count)
         |> Seq.reduce (fun  acc elem -> acc + " " + elem)
+
+    (*
+        DBPR : Introduction to Protein Databases
+    *)
+
+    let (|Match|_|) regex str =
+        let matches = Regex(regex).Matches(str)
+        match matches.Count > 0 with
+            | true -> Some ([for m in matches do
+                                for i in 1..m.Groups.Count - 1 ->
+                                    m.Groups.[i].Value])
+            | false -> None
+ 
+    let readFromFile path =
+        File.ReadAllText(path)
+                
+    let findMatches path regex =
+        match readFromFile path with
+            | Match regex gr -> gr |> List.reduce (fun acc elem -> acc + "\n" + elem)
+            | _ -> String.Empty
 
 [<AutoOpen>]
 module ``Bioinformatics Textbook Track`` =

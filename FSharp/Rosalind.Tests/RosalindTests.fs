@@ -91,6 +91,11 @@ module ``Bioinformatics Armory tests`` =
         let result = ini rawDna = "185 256 245 212"
         Check.Quick result
 
+    [<Fact>]
+    let ``DBPR : Introduction to Protein Databases``() =
+        let result = findMatches "../../../Data/proteins.txt" "DR\s*GO;\s*GO:\d*;\sP:([\w\s]*)" = "GTP catabolic process\nintracellular protein transport\nnucleocytoplasmic transport\nsmall GTPase mediated signal transduction"
+        Check.Quick result
+
 module ``Bioinformatics Textbook Track tests`` =
 
     let data = "TCTTCCACATCTAGCGGAACCTTAGTCTTCCACACCCTTAAGCCCTTAAGCCCTTAAGTCTAGCGGACCTCATGGACCTCATGGTCTAGCGGTC\

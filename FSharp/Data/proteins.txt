@@ -1,0 +1,71 @@
+ID   RAN1B_LOTJA             Reviewed;         209 AA.
+AC   P54766;
+DT   01-OCT-1996, integrated into UniProtKB/Swiss-Prot.
+DT   01-OCT-1996, sequence version 1.
+DT   04-MAR-2015, entry version 80.
+DE   RecName: Full=GTP-binding nuclear protein Ran1B;
+DE   Flags: Fragment;
+GN   Name=RAN1B;
+OS   Lotus japonicus (Lotus corniculatus var. japonicus).
+OC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
+OC   Spermatophyta; Magnoliophyta; eudicotyledons; Gunneridae;
+OC   Pentapetalae; rosids; fabids; Fabales; Fabaceae; Papilionoideae;
+OC   Loteae; Lotus.
+OX   NCBI_TaxID=34305;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   STRAIN=cv. Gifu / B-129; TISSUE=Root nodule;
+RX   PubMed=9076991; DOI=10.1046/j.1365-313X.1997.11020237.x;
+RA   Borg S., Brandstrup B., Jensen T.J., Poulsen C.;
+RT   "Identification of new protein species among 33 different small GTP-
+RT   binding proteins encoded by cDNAs from Lotus japonicus, and expression
+RT   of corresponding mRNAs in developing root nodules.";
+RL   Plant J. 11:237-250(1997).
+CC   -!- FUNCTION: GTP-binding protein involved in nucleocytoplasmic
+CC       transport. Required for the import of protein into the nucleus and
+CC       also for RNA export. Involved in chromatin condensation and
+CC       control of cell cycle (By similarity). {ECO:0000250}.
+CC   -!- SUBCELLULAR LOCATION: Nucleus {ECO:0000250}.
+CC   -!- SIMILARITY: Belongs to the small GTPase superfamily. Ran family.
+CC       {ECO:0000305}.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; Z73960; CAA98188.1; -; mRNA.
+DR   UniGene; Lja.9491; -.
+DR   ProteinModelPortal; P54766; -.
+DR   SMR; P54766; 2-206.
+DR   GO; GO:0005634; C:nucleus; IEA:UniProtKB-SubCell.
+DR   GO; GO:0005525; F:GTP binding; IEA:UniProtKB-KW.
+DR   GO; GO:0003924; F:GTPase activity; IEA:InterPro.
+DR   GO; GO:0006184; P:GTP catabolic process; IEA:InterPro.
+DR   GO; GO:0006886; P:intracellular protein transport; IEA:InterPro.
+DR   GO; GO:0006913; P:nucleocytoplasmic transport; IEA:InterPro.
+DR   GO; GO:0007264; P:small GTPase mediated signal transduction; IEA:InterPro.
+DR   Gene3D; 3.40.50.300; -; 1.
+DR   InterPro; IPR027417; P-loop_NTPase.
+DR   InterPro; IPR002041; Ran_GTPase.
+DR   InterPro; IPR005225; Small_GTP-bd_dom.
+DR   InterPro; IPR001806; Small_GTPase.
+DR   Pfam; PF00071; Ras; 1.
+DR   PRINTS; PR00627; GTPRANTC4.
+DR   SMART; SM00176; RAN; 1.
+DR   SUPFAM; SSF52540; SSF52540; 1.
+DR   TIGRFAMs; TIGR00231; small_GTP; 1.
+DR   PROSITE; PS51418; RAN; 1.
+PE   2: Evidence at transcript level;
+KW   GTP-binding; Nucleotide-binding; Nucleus; Protein transport;
+KW   Transport.
+FT   CHAIN        <1    209       GTP-binding nuclear protein Ran1B.
+FT                                /FTId=PRO_0000208721.
+FT   NP_BIND       8     15       GTP. {ECO:0000250}.
+FT   NP_BIND      56     60       GTP. {ECO:0000250}.
+FT   NP_BIND     113    116       GTP. {ECO:0000250}.
+FT   NON_TER       1      1
+SQ   SEQUENCE   209 AA;  23730 MW;  92CAB4AFEF9AF6C1 CRC64;
+     NFKLVIVGDG GTGKTTFVKR HLTGEFEKKY EPTIGVEVHP LDFFTNCGKI RFYCWDTAGQ
+     EKFGGLRDGY YIHGQCAIIM FDVTARLTYK NVPTWHRDLC RVCENIPIVL CGNKVDVKNR
+     QVKAKQVTFH RKKNLQYYEI SAKSNYNFEK PFLYLARKLA GDPNLHFVES PALAPPEVQI
+     DLAAQQQHEA ELAAAASQPL PDDDDDAFD
+//
