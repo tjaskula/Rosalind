@@ -1,5 +1,8 @@
 ﻿namespace Rosalind
 
+open System
+open System.Text.RegularExpressions
+
 [<AutoOpen>]
 module ``Bioinformatics Stronghlod`` =
 
@@ -47,9 +50,6 @@ module ``Bioinformatics Stronghlod`` =
 [<AutoOpen>]
 module ``Bioinformatics Armory`` =
 
-    open System
-    open System.Text.RegularExpressions
-
     (*
         INI : Introduction to the Bioinformatics Armory
     *)
@@ -79,8 +79,6 @@ module ``Bioinformatics Armory`` =
 
 [<AutoOpen>]
 module ``Bioinformatics Textbook Track`` =
-
-    open System.Text.RegularExpressions
 
     (*
         1A : Frequent Words Problem
@@ -147,3 +145,38 @@ module ``Algorithmic Heights`` =
             | 0 -> 0
             | 1 -> 1
             | _ -> fibo(n - 1) + fibo(n - 2)
+
+    (*
+        BINS : Binary Search
+    *)
+
+    let binarySearch value a =
+        let rec findIndex a value indx =
+            let low = 0
+            let high = Array.length a - 1
+            let mid = low + (high - low) / 2
+ 
+            match a with
+                | [||] -> -1
+                | [|el1|] -> if el1 = value then indx else -1
+                | _ -> match a.[mid] with
+                        | v when v = value -> mid + indx
+                        | v when v < value -> let lowerBound = mid + 1
+                                              findIndex a.[lowerBound..] value (lowerBound + indx)
+                        | v when v > value -> findIndex a.[0..mid - 1] value indx
+ 
+        findIndex a value 1
+
+    let doSearch path = 
+        let lines = readLines path
+        let input = lines.[2].Split(' ') |> Array.map (fun e -> int e)
+        let search = lines.[3].Split(' ') |> Array.map (fun e -> int e)
+
+        let trim (s: string) =
+            s.Trim()
+ 
+        search
+            |> List.ofArray
+            |> List.map (fun e -> binarySearch e input)
+            |> List.fold (fun a e -> sprintf "%s %s" a (string e)) String.Empty
+            |> trim

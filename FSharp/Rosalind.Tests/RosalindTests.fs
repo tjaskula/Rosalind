@@ -124,3 +124,8 @@ module ``Algorithmic Heights tests`` =
     let ``FIBO : Fibonacci Numbers``() =
         let result = fibo 20 = 6765
         Check.Quick result
+
+    [<Fact>]
+    let ``BINS : Binary Search``() =
+        let result = doSearch "../../../Data/rosalind_bins.txt" = readFromFile "../../../Data/rosalind_bins_output.txt"
+        Check.Quick result
