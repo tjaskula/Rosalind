@@ -48,7 +48,6 @@ module ``Bioinformatics Stronghlod`` =
 module ``Bioinformatics Armory`` =
 
     open System
-    open System.IO
     open System.Text.RegularExpressions
 
     (*
@@ -72,9 +71,6 @@ module ``Bioinformatics Armory`` =
                                 for i in 1..m.Groups.Count - 1 ->
                                     m.Groups.[i].Value])
             | false -> None
- 
-    let readFromFile path =
-        File.ReadAllText(path)
                 
     let findMatches path regex =
         match readFromFile path with
@@ -119,6 +115,25 @@ module ``Bioinformatics Textbook Track`` =
             |> List.filter (fun (_, count) -> count = m)
             |> List.map (fun m -> fst m)
             |> List.reduce (fun acc el -> sprintf "%s %s" acc el)
+
+    (*
+        1B : Reverse Complement Problem
+    *)
+
+    let mapComplement c =
+        match c with
+            | 'A' -> "T"
+            | 'C' -> "G"
+            | 'G' -> "C"
+            | 'T' -> "A"
+            | _ -> string c
+ 
+    let revComplement pattern =
+        pattern
+            |> List.ofSeq
+            |> List.map (fun e -> mapComplement e)
+            |> List.rev
+            |> List.reduce (fun a e -> a + e)
 
 [<AutoOpen>]
 module ``Algorithmic Heights`` =

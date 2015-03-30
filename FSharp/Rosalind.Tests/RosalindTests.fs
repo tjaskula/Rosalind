@@ -113,6 +113,11 @@ module ``Bioinformatics Textbook Track tests`` =
         let result = mostFrequent 13 data = "GTCTTCCACATCT"
         Check.Quick result
 
+    [<Fact>]
+    let ``1B : Reverse Complement Problem``() =
+        let result = revComplement (readFromFile "../../../Data/reverse.txt") = readFromFile "../../../Data/reverse_output.txt"
+        Check.Quick result
+
 module ``Algorithmic Heights tests`` =
     
     [<Fact>]
