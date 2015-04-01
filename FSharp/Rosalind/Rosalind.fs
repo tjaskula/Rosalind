@@ -47,6 +47,19 @@ module ``Bioinformatics Stronghlod`` =
         |> Seq.map (fun c -> if c = 'T' then "U" else string c)
         |> Seq.reduce (+)
 
+    (*
+        REVC : Complementing a Strand of DNA
+    *)
+
+    let revComplement pattern =
+        let kv = dict(Seq.zip "ACGT" "TGCA")
+       
+        pattern
+            |> List.ofSeq
+            |> List.map (fun e -> string kv.[e])
+            |> List.rev
+            |> List.reduce (fun a e -> a + e)
+
 [<AutoOpen>]
 module ``Bioinformatics Armory`` =
 

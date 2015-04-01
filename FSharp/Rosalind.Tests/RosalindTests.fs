@@ -68,6 +68,11 @@ module ``Bioinformatics Stronghlod tests`` =
                                            CGGGUAACUUGUACGCUAAGUCGUUAAGCGUCUGUACCG"
         Check.Quick result
 
+    [<Fact>]
+    let ``REVC : Complementing a Strand of DNA``() =
+        let result = revComplement (readFromFile "../../../Data/rosalind_revc.txt") = readFromFile "../../../Data/rosalind_revc_output.txt"
+        Check.Quick result
+
 module ``Bioinformatics Armory tests`` =
 
     // INI : Introduction to the Bioinformatics Armory
