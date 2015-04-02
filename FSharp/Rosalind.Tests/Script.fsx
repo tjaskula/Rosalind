@@ -23,17 +23,3 @@ open System.Xml.Linq
 open System.Net.Http
 open System.Net
 open FSharp.Data
- 
-// 1C : Pattern Matching Problem
- 
-let indexOfMatches d p =
-    [for m in Regex.Matches(d, @"(?<=" + p + ")") ->
-        m.Index - String.length p]
- 
-let lines = readLines "../Data/pattern_matching.txt"
-let pattern = lines.[0]
-let input = lines.[1]
- 
-indexOfMatches input pattern
-    |> Seq.map (fun e -> string e)
-    |> Seq.reduce (fun a e -> sprintf "%s %s" a e)

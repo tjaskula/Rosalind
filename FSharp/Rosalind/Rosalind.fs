@@ -160,6 +160,23 @@ module ``Bioinformatics Textbook Track`` =
             |> List.rev
             |> List.reduce (fun a e -> a + e)
 
+    (*
+        1C : Pattern Matching Problem
+    *)
+
+    let patternMatch() =
+        let indexOfMatches d p =
+            [for m in Regex.Matches(d, @"(?<=" + p + ")") ->
+                m.Index - String.length p]
+ 
+        let lines = readLines "../../../Data/rosalind_1c.txt"
+        let pattern = lines.[0]
+        let input = lines.[1]
+ 
+        indexOfMatches input pattern
+            |> Seq.map (fun e -> string e)
+            |> Seq.reduce (fun a e -> sprintf "%s %s" a e)
+
 [<AutoOpen>]
 module ``Algorithmic Heights`` =
     

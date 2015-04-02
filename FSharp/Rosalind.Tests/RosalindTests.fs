@@ -128,6 +128,11 @@ module ``Bioinformatics Textbook Track tests`` =
         let result = revComplement (readFromFile "../../../Data/reverse.txt") = readFromFile "../../../Data/reverse_output.txt"
         Check.Quick result
 
+    [<Fact>]
+    let ``1C : Pattern Matching Problem``() =
+        let result = patternMatch() = readFromFile "../../../Data/rosalind_1c_output.txt"
+        Check.Quick result
+
 module ``Algorithmic Heights tests`` =
     
     [<Fact>]
