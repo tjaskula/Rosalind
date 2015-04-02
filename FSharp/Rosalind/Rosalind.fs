@@ -63,6 +63,8 @@ module ``Bioinformatics Stronghlod`` =
 [<AutoOpen>]
 module ``Bioinformatics Armory`` =
 
+    open FSharp.Data
+
     (*
         INI : Introduction to the Bioinformatics Armory
     *)
@@ -89,6 +91,18 @@ module ``Bioinformatics Armory`` =
         match readFromFile path with
             | Match regex gr -> gr |> List.reduce (fun acc elem -> acc + "\n" + elem)
             | _ -> String.Empty
+
+    (*
+        GBK : GenBank Introduction
+    *)
+
+    type GenBank = XmlProvider<"../Data/genbank.txt">
+    //type GenBank = XmlProvider<"""http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nucleotide&term=Hildebrandtia[Organism]+AND+%222001/04/16%22[PDAT]:%222008/08/03%22[PDAT]""">
+    //sample.XElement.Document.Save("../Data/genbank.txt")
+
+    let countBase() =
+        let sample = GenBank.GetSample()
+        sample.Count
 
 [<AutoOpen>]
 module ``Bioinformatics Textbook Track`` =

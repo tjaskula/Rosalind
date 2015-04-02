@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eSearchResult PUBLIC "-//NLM//DTD esearch 20060628//EN" "http://eutils.ncbi.nlm.nih.gov/eutils/dtd/20060628/esearch.dtd"[]>
+<eSearchResult>
+  <Count>22</Count>
+  <RetMax>20</RetMax>
+  <RetStart>0</RetStart>
+  <IdList>
+    <Id>18182187</Id>
+    <Id>68271093</Id>
+    <Id>50058722</Id>
+    <Id>21634218</Id>
+    <Id>21634217</Id>
+    <Id>21634216</Id>
+    <Id>21634215</Id>
+    <Id>21634052</Id>
+    <Id>21634050</Id>
+    <Id>21634048</Id>
+    <Id>21634046</Id>
+    <Id>21633708</Id>
+    <Id>21633703</Id>
+    <Id>21633698</Id>
+    <Id>21633693</Id>
+    <Id>21633354</Id>
+    <Id>21633352</Id>
+    <Id>21633350</Id>
+    <Id>21633348</Id>
+    <Id>50058658</Id>
+  </IdList>
+  <TranslationSet>
+    <Translation>
+      <From>Hildebrandtia[Organism]</From>
+      <To>"Hildebrandtia"[Organism] OR "Hildebrandtia"[Organism]</To>
+    </Translation>
+  </TranslationSet>
+  <TranslationStack>
+    <TermSet>
+      <Term>"Hildebrandtia"[Organism]</Term>
+      <Field>Organism</Field>
+      <Count>24</Count>
+      <Explode>Y</Explode>
+    </TermSet>
+    <TermSet>
+      <Term>"Hildebrandtia"[Organism]</Term>
+      <Field>Organism</Field>
+      <Count>11</Count>
+      <Explode>Y</Explode>
+    </TermSet>
+    <OP>OR</OP>
+    <OP>GROUP</OP>
+    <TermSet>
+      <Term>"2001/04/16"[PDAT]</Term>
+      <Field>PDAT</Field>
+      <Count>0</Count>
+      <Explode>N</Explode>
+    </TermSet>
+    <TermSet>
+      <Term>"2008/08/03"[PDAT]</Term>
+      <Field>PDAT</Field>
+      <Count>0</Count>
+      <Explode>N</Explode>
+    </TermSet>
+    <OP>RANGE</OP>
+    <OP>AND</OP>
+  </TranslationStack>
+  <QueryTranslation>("Hildebrandtia"[Organism] OR "Hildebrandtia"[Organism]) AND "2001/04/16"[PDAT] : "2008/08/03"[PDAT]</QueryTranslation>
+</eSearchResult>

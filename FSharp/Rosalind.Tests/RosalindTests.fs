@@ -101,6 +101,11 @@ module ``Bioinformatics Armory tests`` =
         let result = findMatches "../../../Data/proteins.txt" "DR\s*GO;\s*GO:\d*;\sP:([\w\s]*)" = "GTP catabolic process\nintracellular protein transport\nnucleocytoplasmic transport\nsmall GTPase mediated signal transduction"
         Check.Quick result
 
+    [<Fact>]
+    let ``GBK : GenBank Introduction``() =
+        let result = countBase() = 22
+        Check.Quick result
+
 module ``Bioinformatics Textbook Track tests`` =
 
     let data = "TCTTCCACATCTAGCGGAACCTTAGTCTTCCACACCCTTAAGCCCTTAAGCCCTTAAGTCTAGCGGACCTCATGGACCTCATGGTCTAGCGGTC\
